@@ -27,7 +27,7 @@ const Modal = () => {
           >
             아니요
           </button>
-        </div>
+        </div> 
       </div>
     </aside>
   );

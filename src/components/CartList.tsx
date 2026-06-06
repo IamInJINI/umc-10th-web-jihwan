@@ -1,9 +1,6 @@
 
 import CartItem from './Cartitem';
-import type { RootState } from '../store/store';
-import { useSelector } from '../hooks/useCustomRedux';
-import { useCartActions, useCartInfo, useCartStore } from '../hooks/useCartStore';
-import { calculateTotals } from '../slices/cartSlice';
+import { useCartActions, useCartInfo,  } from '../hooks/useCartStore';
 import { useEffect } from 'react';
 
 const CartList = () => {

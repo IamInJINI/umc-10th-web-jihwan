@@ -1,6 +1,5 @@
 import { useDispatch } from "../hooks/useCustomRedux";
 import { closeModal } from "../slices/modalSlice";
-import { clearCart } from "../slices/cartSlice";
 import { useCartActions } from "../hooks/useCartStore";
 
 const Modal = () => {

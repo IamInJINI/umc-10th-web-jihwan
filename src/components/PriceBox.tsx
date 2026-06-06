@@ -1,14 +1,20 @@
-import { useCartInfo } from "../hooks/useCartStore";
+import { useCartInfo, useCartActions } from "../hooks/useCartStore";
 import { useDispatch } from "../hooks/useCustomRedux"
 import { openModal } from "../slices/modalSlice";
 import { FaTrash, FaCreditCard } from "react-icons/fa";
 
 export const PriceBox = () => {
     const { total } = useCartInfo();
+    const { clearCart } = useCartActions();
     const dispatch = useDispatch();
 
     const handleInitializeCart = () => {
         dispatch(openModal())
+    }
+    
+    const handleOrder = () => {
+        alert("주문이 완료되었습니다! 장바구니를 비웁니다.");
+        clearCart();
     }
     
     return (
@@ -35,7 +41,7 @@ export const PriceBox = () => {
                         <span>장바구니 초기화</span>
                     </button>
                     <button
-                        onClick={() => alert("주문이 완료되었습니다!")}
+                        onClick={handleOrder}
                         className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-md shadow-blue-200 transition-all duration-200 active:scale-98 cursor-pointer"
                     >
                         <FaCreditCard className="text-sm" />
